@@ -77,7 +77,7 @@ print(math.ceil(PI))
 print(math.floor(PI))
 
 # type conversion
-a, b = '10', '20'
+# a, b = '10', '20'
 print(int(a) + int(b))
 
 int(a)
@@ -164,6 +164,8 @@ print(increment(2, 3))
 print(increment(2))
 
 # args and kwargs
+
+
 def multyply(*numbers: int) -> int:
     total = 1
     for number in numbers:
@@ -173,7 +175,67 @@ def multyply(*numbers: int) -> int:
 
 print(multyply(1, 2, 3, 4, 5))
 
+
 def save_user(**user):
     print(user)
 
+
 save_user(id='qzyy98745621sdfd1', name="Tatioswalderson", age=3)
+
+
+def greet(name):
+    message_for_greet_fn = 'Good morning!'
+    print(f"Hello {name}! {message_for_greet_fn}")
+
+
+greet("Vivo")
+
+# scopes
+
+works = 'not works'
+
+
+def works_only_inside():
+    if True:
+        works = 'works'
+    print(works)
+
+
+works_only_inside()
+print(works)
+
+# debugging
+
+
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+
+print("start")
+print(multiply(1, 2, 3))
+print("finish")
+
+# fizzbuzz chall
+
+
+def fizzbuzz(input: int) -> str:
+    if input % 3 == 0 and input % 5 == 0:
+        return 'FizzBuzz'
+    if input % 3 == 0:
+        return 'Fizz'
+    if input % 5 == 0:
+        return 'Buzz'
+    return str(input)
+
+
+print(fizzbuzz(3))
+print(fizzbuzz(5))
+print(fizzbuzz(6))
+print(fizzbuzz(7))
+print(fizzbuzz(10))
+print(fizzbuzz(15))
+print(fizzbuzz(45))
+print(fizzbuzz(49))
